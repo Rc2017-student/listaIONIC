@@ -1,0 +1,7 @@
+{
+  "name": "listaIONIC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
