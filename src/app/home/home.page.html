@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Lista de productos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,66 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Lista de productos</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label position="stacked">Nombre: </ion-label>
+    <ion-input type="text" [(ngModel)]="txtNombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Descripcion: </ion-label>
+    <ion-input type="text" [(ngModel)]="txtDescripcion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Cantidad: </ion-label>
+    <ion-input type="text" [(ngModel)]="txtCantidad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Precio de costo: </ion-label>
+    <ion-input type="text" [(ngModel)]="txtPrecioCosto"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Precio de venta: </ion-label>
+    <ion-input type="text" [(ngModel)]="txtPrecioVenta"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Url de la imagen: </ion-label>
+    <ion-input type="text" [(ngModel)]="txtUrl"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="guardarProducto()">Guardar</ion-button>
+
+  <!-- Lista de productos -->
+  <ion-list>
+    <!-- Iterar sobre productos guardados -->
+    <ion-card *ngFor="let producto of productos; let i = index">
+      <ion-img [src]="producto.url" alt="Imagen del producto"></ion-img>
+
+      <ion-card-header>
+        <ion-card-title>{{ producto.nombre }}</ion-card-title>
+        <ion-card-subtitle>Cantidad: {{ producto.cantidad }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ producto.descripcion }}</p>
+        <p><strong>Precio Costo:</strong> {{ producto.precioCosto | currency }}</p>
+        <p><strong>Precio Venta:</strong> {{ producto.precioVenta | currency }}</p>
+      </ion-card-content>
+      <!-- Botón para borrar producto -->
+      <ion-button color="danger" expand="block" (click)="borraProducto(i)">
+        Eliminar
+      </ion-button>
+      <ion-button color="primary" expand="block" (click)="editarProducto(i)">
+        Editar
+      </ion-button>
+    </ion-card>
+  </ion-list>
+
 </ion-content>

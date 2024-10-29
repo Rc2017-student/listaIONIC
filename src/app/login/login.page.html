@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="stacked">Nombre de Usuario</ion-label>
+    <ion-input [(ngModel)]="username" type="text" placeholder="Ingresa tu nombre de usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Recordar Usuario</ion-label>
+    <ion-checkbox [(ngModel)]="rememberMe" slot="start"></ion-checkbox>
+  </ion-item>
+
+  <ion-button expand="full" (click)="login()">Iniciar Sesión</ion-button>
+
+  <ion-button expand="full" color="light" (click)="goToRegister()">Registrarse</ion-button>
+</ion-content>

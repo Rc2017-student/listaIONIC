@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div style="display: flex; align-items: center;">
+        <ion-avatar style="margin-right: 8px;">
+          <img alt="{{user.tienda}}" src="{{user.urlTienda}}"/>
+        </ion-avatar>
+        <h1>{{user.tienda}}</h1>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-list>
+  <ion-item [routerLink]="['/home']">
+    <ion-label>Productos</ion-label>
+  </ion-item>
+    <ion-item [routerLink]="['/clientes']">
+      <ion-label>Clientes</ion-label>
+    </ion-item>
+</ion-list>
+</ion-content>

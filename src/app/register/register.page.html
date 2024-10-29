@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="stacked">Nombre Completo</ion-label>
+    <ion-input [(ngModel)]="nombre" type="text" placeholder="Ingresa tu nombre completo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre de Usuario</ion-label>
+    <ion-input [(ngModel)]="username" type="text" placeholder="Ingresa tu nombre de usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre de la Tienda</ion-label>
+    <ion-input [(ngModel)]="tienda" type="text" placeholder="Ingresa el nombre de tu tienda"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">URL de la Imagen de la Tienda</ion-label>
+    <ion-input [(ngModel)]="urlTienda" type="text" placeholder="Ingresa la URL de la imagen"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="register()">Registrarse</ion-button>
+</ion-content>
